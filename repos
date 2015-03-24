@@ -1,0 +1,20 @@
+{
+    "repo-name": {
+        "base_dir": "/var/www/test-repo",
+        "branch": "master",
+        "cmds": [
+            {
+                "dir": "/var/www/test-repo",
+                "cmd": "python manage.py db migrate"
+            },
+            {
+                "dir": "/var/www/test-repo",
+                "cmd": "python manage.py db upgrade"
+            },
+            {
+                "dir": "/etc/uwsgi/apps-enabled",
+                "cmd": "touch test-repo.ini"
+            }
+        ]
+    }
+}
