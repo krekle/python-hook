@@ -75,9 +75,3 @@ class Commands(object):
 
     def __str__(self):
         return u'cd %s & %s' % (self.directory, self.cmd)
-
-d = Delegator.get_repos()
-print 'repo-name' in d
-a = RepoActions(d['repo-name'], d['repo-name']['base_dir'], d['repo-name']['cmds'])
-for c in a.cmds:
-    print c
