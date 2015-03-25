@@ -13,7 +13,6 @@ class hooks:
         print
         print 'DATA RECEIVED:'
         print payload
-        print
         # send payload to delegator
         delegator = Delegator(payload)
         print 'DELEGATOR PARSED'
@@ -22,7 +21,8 @@ class hooks:
             man = Manager(delegator.action)
             print 'RUNNING CMDS'
             man.do()
-
+        print 'DELEGATOR FOUND NO ACTION'
+	return 'OK'
 
 if __name__ == '__main__':
     print 'running'
