@@ -18,7 +18,7 @@ class Manager():
         str_env = 'source %s/bin/activate' % str(self.action.env)
         bash.sendline(str_env) # Workon the environment
         print 'environment sourced'
-        str_cmd = str_env + u'cd %s && git pull origin %s' % (self.action.base_dir, self.action.branch)
+        str_cmd = 'cd %s && git pull origin %s' % (self.action.base_dir, self.action.branch)
         bash.sendline(str_cmd)
         print 'branch %s pulled' % self.action.branch
         for cmd in self.action.cmds:
