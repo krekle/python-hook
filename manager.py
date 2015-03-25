@@ -1,6 +1,6 @@
 import pexpect as p
 from delegator import RepoActions
-
+import os
 
 class Manager():
     action = None
@@ -13,6 +13,7 @@ class Manager():
 
     def do(self):
         bash = p.spawn('bash') # Initialize a shell
+        bash.logfile = open(os.path.dirname(os.path.abspath(__file__)) + '/log.txt', 'w+')
         print 'bash shell created'
         str_env = 'source %s/bin/activate' % str(self.action.env)
         bash.sendline(str_env) # Workon the environment
